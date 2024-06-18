@@ -38,9 +38,18 @@ export default function Home() {
       {loading ? (
         <Loading />
       ) : error ? (
-        <div className="flex h-screen items-center justify-center">
-          <Error error={error} className={"text-[2.3rem]"} />
-        </div>
+        <>
+          <div className="flex justify-center mt-[5vh]">
+            <Link href="/watchedCourses">
+              <button className="btn text-[2rem] btn-ghost">
+                Watched Courses
+              </button>
+            </Link>
+          </div>
+          <div className="flex h-screen items-center justify-center">
+            <Error error={error} className={"text-[2.3rem]"} />
+          </div>
+        </>
       ) : (
         <>
           <div className="flex justify-center mt-[5vh]">
