@@ -66,7 +66,9 @@ export default function Home() {
                   alt="Youtube Thumbnail"
                   className="w-[30vw] aspect-video"
                 />
-                <h1 className="text-[2rem] text-center">Name: {course.name}</h1>
+                <h1 className="text-[2rem] text-center max-w-[60vw]">
+                  Name: {course.name}
+                </h1>
                 <h2 className="line-clamp-3 w-[40vw] text-center">
                   Descrpition: {course.description}
                 </h2>
