@@ -1,10 +1,18 @@
 "use client";
-import { deleteCookie } from "cookies-next";
+import * as jwt from "jsonwebtoken";
+import { deleteCookie, getCookie } from "cookies-next";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function Nav() {
+  const [username, setUsername] = useState("");
   const router = useRouter();
+  useEffect(() => {
+    const token = getCookie("token");
+    const decoded: any = jwt.decode(token as string);
+    setUsername(decoded.username);
+  }, []);
   return (
     <nav className="navbar">
       <div className="flex-1">
@@ -14,6 +22,11 @@ export default function Nav() {
         <Link href={"/home"}>
           <button className="btn text-[1.3rem] btn-ghost">Home</button>
         </Link>
+        {username == "jad" && (
+          <button className="btn btn-ghost text-[1.3rem]">
+            <Link href={"/add"}>Add</Link>
+          </button>
+        )}
         <button
           className="btn btn-ghost text-[1.3rem]"
           onClick={() => {
