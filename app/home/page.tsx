@@ -53,6 +53,7 @@ export default function Home() {
           <div className="flex flex-col items-center mt-[15vh] gap-[10vh]">
             {courses.map((course) => (
               <div
+                key={course._id as string}
                 className="border border-solid w-fit h-fit p-[3vw] flex flex-col gap-[1vh] items-center"
                 onClick={() => {
                   router.push(`/course/${String(course._id)}`);

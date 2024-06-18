@@ -8,7 +8,7 @@ export default function Home() {
           <div className="max-w-md">
             <h1 className="text-5xl font-bold">Welcome to baclearn!</h1>
             <p className="py-6">
-              Youtube's best courses bundled into one platform.
+              Youtube&apos;s best courses bundled into one platform.
             </p>
             <div className="flex gap-[5vh] justify-center">
               <button className="btn btn-primary">
